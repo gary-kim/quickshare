@@ -1,0 +1,26 @@
+kind: pipeline
+name: unit-sqlite-nc17-php7.2
+
+steps:
+  - name: compile-assets
+    image: node:12
+    commands:
+      - npm ci
+      - npm run build
+  - name: sqlite-php7.2
+    image: nextcloudci/php7.2:php7.2-13
+    environment:
+      APP_NAME: quickshare
+      CORE_BRANCH: stable17
+      DB: sqlite
+    commands:
+      - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
+      - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DB
+      - cd ../server
+      - php occ app:enable $APP_NAME
+      - cd apps/$APP_NAME
+      - composer install
+      - phpunit -c tests/phpunit.xml --coverage-clover build/php-unit.coverage.xml
+      - phpunit -c tests/phpunit.integration.xml --coverage-clover build/php-integration.coverage.xml
+
+

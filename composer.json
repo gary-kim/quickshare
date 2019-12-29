@@ -1,0 +1,16 @@
+{
+    "name": "Quick Share",
+    "description": "Easily share temporary files with others",
+    "type": "project",
+    "license": "AGPL-3.0",
+    "authors": [
+        {
+            "name": "Gary Kim",
+            "email": "gary@garykim.dev"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "name": "quickshare",
+    "version": "0.0.1",
+    "description": "Quickly create temporary share links",
+    "private": true,
+    "main": "index.js",
+    "scripts": {
+        "build": "npx webpack --progress --config webpack.prod.js",
+        "watch": "npx webpack --progress --watch --config webpack.dev.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gary-kim/quickshare.git"
+    },
+    "authors": [
+        {
+            "name": "Gary Kim",
+            "email": "gary@garykim.dev"
+        }
+    ],
+    "license": "AGPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/gary-kim/quickshare/issues"
+    },
+    "browserslist": [
+        "extends @nextcloud/browserslist-config"
+    ],
+    "homepage": "https://github.com/gary-kim/quickshare#readme",
+    "devDependencies": {
+        "@babel/core": "^7.7.7",
+        "@nextcloud/browserslist-config": "^1.0.0",
+        "babel-loader": "^8.0.6",
+        "css-loader": "^3.4.0",
+        "eslint": "^6.8.0",
+        "eslint-plugin-vue": "^6.1.1",
+        "sass-loader": "^8.0.0",
+        "vue-loader": "^15.8.3",
+        "vue-template-compiler": "^2.6.11",
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10",
+        "webpack-merge": "^4.2.2"
+    },
+    "dependencies": {
+        "@nextcloud/initial-state": "^1.0.0",
+        "@nextcloud/vue": "^1.2.3",
+        "vue": "^2.6.11"
+    }
+}
